@@ -5,7 +5,7 @@ info:
 schemes:
   - https
 paths:
-  # どんなURLパスでもマッチするワイルドカード
+  # FastMCPのエンドポイントに対してCloud RunのURLを設定
   /mcp:
     get:
       operationId: getMcp
