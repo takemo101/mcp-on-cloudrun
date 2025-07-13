@@ -1,24 +1,24 @@
-# Use the official Python image
+# 公式のPythonイメージを使用
 FROM python:3.13-slim
 
 ENV PORT=8080
 
-# Install uv
+# uvをインストール
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
-# Install the project into /app
+# プロジェクトを/appにインストール
 COPY . /app
 WORKDIR /app
 
-# Allow statements and log messages to immediately appear in the logs
+# print文やログメッセージがすぐにログに出力されるようにする
 ENV PYTHONUNBUFFERED=1
 
-# Install dependencies
+# 依存関係をインストール
 RUN uv sync --frozen
 
 ENV PATH="/app/.venv/bin:$PATH"
 
 EXPOSE $PORT
 
-# Run the FastMCP server
+# FastMCPサーバーを実行
 CMD ["uv", "run", "server"]
