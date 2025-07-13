@@ -1,0 +1,35 @@
+swagger: '2.0'
+info:
+  title: 'MCP on Cloud Run API'
+  version: '1.0.0'
+schemes:
+  - https
+paths:
+  # どんなURLパスでもマッチするワイルドカード
+  /mcp:
+    get:
+      operationId: getMcp
+      security:
+        - api_key_header: []
+      x-google-backend:
+        address: ${cloud_run_url} # Pulumiが自動で設定
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: postMcp
+      security:
+        - api_key_header: []
+      x-google-backend:
+        address: ${cloud_run_url} # Pulumiが自動で設定
+        path_translation: APPEND_PATH_TO_ADDRESS
+      responses:
+        '200':
+          description: OK
+
+securityDefinitions:
+  api_key_header:
+    type: 'apiKey'
+    name: 'X-Api-Key' # ヘッダー名
+    in: 'header' # 場所をヘッダーに指定

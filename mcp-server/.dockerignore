@@ -1,0 +1,7 @@
+# Exclude the project virtual environment from image builds
+.venv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class

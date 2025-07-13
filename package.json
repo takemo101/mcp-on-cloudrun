@@ -1,0 +1,23 @@
+{
+  "name": "mcp-on-cloudrun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "ops:up": "pnpm -F @mcp-on-cloudrun/ops exec pulumi up",
+    "ops:preview": "pnpm -F @mcp-on-cloudrun/ops exec pulumi preview",
+    "ops:destroy": "pnpm -F @mcp-on-cloudrun/ops exec pulumi destroy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.4",
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.6",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  }
+}
