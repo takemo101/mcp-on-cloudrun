@@ -1,0 +1,5 @@
+config:
+  gcp:project: xxx-xxxxxxxx
+  gcp:region: asia-northeast1
+  gcp:billingProject: xxx-xxxxxxxx
+  gcp:userProjectOverride: true
